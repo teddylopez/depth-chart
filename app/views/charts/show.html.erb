@@ -1,0 +1,102 @@
+<h4 class="header">2004 Boston Red Sox Depth Chart</h4>
+
+<div class="intro">
+  <p>Click on a player to learn more about them or <%= link_to 'Edit the depth chart', edit_path, class: 'hl-link' %></p>
+
+  <small><span style="color:blue">Blue</span> = left-handed or switch-hitting batter</small><br>
+  <small><span style="color:#c8012e">Red</span> = left-handed pitcher</small>
+</div>
+<%# Empty div container for modal %>
+<div class="modalContainer"></div>
+
+<div class='depth-chart-container depth-chart-views'>
+  <div class="depth-chart">
+    <div class="depth-positions">
+      <span class="depth-chart-field"><%= image_tag("diamond-color.png") %></span>
+
+      <div class="show-outfield">
+        <div class="show-lf">
+
+          <div class="field-position" id="left_field">
+            <h6 class='position-name'>Left Field</h6 class='position-name'>
+              <%= render 'show_list', chart: @chart.position_list, position: "left_field" %>
+          </div>
+        </div>
+        <div class="show-cf">
+          <div class="field-position" id="center_field">
+            <h6 class='position-name'>Center Field</h6 class='position-name'>
+              <%= render 'show_list', chart: @chart.position_list, position: "center_field" %>
+          </div>
+        </div>
+
+        <div class="show-rf">
+          <div class="field-position" id="right_field">
+            <h6 class='position-name'>Right Field</h6 class='position-name'>
+              <%= render 'show_list', chart: @chart.position_list, position: "right_field" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="show-mid-inf">
+        <div class="show-ss">
+          <div class="field-position" id="shortstop">
+            <h6 class='position-name'>Shortstop</h6 class='position-name'>
+              <%= render 'show_list', chart: @chart.position_list, position: "shortstop" %>
+          </div>
+        </div>
+
+        <div class="show-2b">
+          <div class="field-position" id="second_base">
+            <h6 class='position-name'>Second Base</h6 class='position-name'>
+              <%= render 'show_list', chart: @chart.position_list, position: "second_base" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="show-inf">
+        <div class="show-3b">
+          <div class="field-position" id="third_base">
+            <h6 class='position-name'>Third Base</h6 class='position-name'>
+              <%= render 'show_list', chart: @chart.position_list, position: "third_base" %>
+          </div>
+        </div>
+
+        <div class="show-rotation">
+          <div class="field-position" id="rotation">
+            <h6 class='position-name'>Rotation</h6 class='position-name'>
+              <%= render 'show_list', chart: @chart.position_list, position: "rotation" %>
+          </div>
+        </div>
+
+        <div class="show-1b">
+          <div class="field-position" id="first_base">
+            <h6 class='position-name'>First Base</h6 class='position-name'>
+              <%= render 'show_list', chart: @chart.position_list, position: "first_base" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="show-bp-c-dh">
+        <div class="show-bp">
+          <div class="field-position" id="bullpen">
+            <h6 class='position-name'>Bullpen</h6 class='position-name'>
+              <%= render 'show_list', chart: @chart.position_list, position: "bullpen" %>
+          </div>
+        </div>
+
+        <div class="show-c">
+          <div class="field-position" id="catcher">
+            <h6 class='position-name'>Catcher</h6 class='position-name'>
+              <%= render 'show_list', chart: @chart.position_list, position: "catcher" %>
+          </div>
+        </div>
+
+        <div class="show-dh">
+          <div class="field-position" id="designated_hitter">
+            <h6 class='position-name'>Designated Hitter</h6 class='position-name'>
+            <%= render 'show_list', chart: @chart.position_list, position: "designated_hitter" %>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

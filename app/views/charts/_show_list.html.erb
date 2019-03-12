@@ -1,0 +1,7 @@
+<% unless chart[position] == nil %>
+  <% chart[position].each do |player_id| %>
+    <div class='draggable depth-player' data-player-id=<%= player_id %>>
+      <span class="<%= style_player(@players[player_id.to_i]) %>"><%= link_to "#{@players[player_id.to_i].last_name}, #{@players[player_id.to_i].first_name}", player_show_path(player_id), :remote => true %></span>
+    </div>
+  <% end %>
+<% end %>

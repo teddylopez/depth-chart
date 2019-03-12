@@ -1,0 +1,129 @@
+// Place all the styles related to the players controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.player-modal {
+  position: fixed;
+  z-index: 19;
+  padding-top: 90px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+
+  .player-modal-title {
+    text-align: center;
+  }
+
+  .player {
+    width: 100%;
+  }
+
+  .player-name {
+    // font-family: 'Luckiest Guy', cursive;
+    font-family: 'Damion', cursive;
+
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    text-shadow: 4px 4px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-top: 0;
+    margin-bottom: 10px;
+    // transform: rotate(-5deg);
+  }
+
+  .info-wrapper {
+    font-family: 'Fredoka One', cursive;
+    width: 100%;
+
+    .player-photo {
+      margin: auto;
+
+      img {
+        border: 2px solid #ffeaa7;
+        padding: 3px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    .player-info {
+      margin-right: 50px;
+    }
+  }
+}
+
+.player-modal-content {
+  background-color: #ffda79;
+  margin: auto auto 2.7rem auto;
+  padding: 20px;
+  width: 30%;
+  height: 70%;
+  display: flex;
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.2);
+
+  // Texture:
+  background: #36c;
+  background:
+  linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+  linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+  linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+  linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+  #36c;
+  background-size: 1px 2px;
+}
+
+/* styling for deleting player */
+.delete-player {
+  color: #333333;
+  opacity:0;
+  transition:opacity 0.1s linear;
+  -moz-transition: opacity 0.1s linear;
+  -webkit-transition: opacity 0.1s linear;
+  cursor: pointer;
+}
+
+.depth-player:hover .delete-player {
+  opacity: 1;
+  transition:opacity .01s linear;
+  -moz-transition: opacity .01s linear;
+  -webkit-transition: opacity .01s linear;
+}
+
+.l-s-player {
+  color: blue;
+
+  a {
+    color: blue;
+  }
+}
+
+.l-pitcher {
+  color: #c8102e;
+
+  a {
+    color: #c8102e;
+  }
+}
+
+.r-player-pitcher {
+  color: #333333;
+
+  a {
+    color: #333333;
+  }
+}
+
+.hl-link {
+  color: #c8102e;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: inline-block;
+}

@@ -1,0 +1,119 @@
+<h2>Edit Depth Chart</h2>
+
+<div class="buttons">
+  <a href="<%= show_path %>" class="show-dc hl-link">
+    Back to Depth Chart
+  </a>
+  <br>
+  <a class="delete-dc hl-link">
+    Clear Depth Chart
+  </a>
+</div>
+
+<p class="intro">Drag and drop players to adjust the positions:</p>
+
+<small><span style="color:blue">Blue</span> = left-handed or switch-hitting batter</small><br>
+<small><span style="color:#c8012e">Red</span> = left-handed pitcher</small>
+
+<div class='depth-chart-container edit-page-scroll-content'>
+  <div class="depth-chart">
+    <div class="depth-positions">
+      <span class="edit-depth-chart-field"><%= image_tag("diamond-color.png") %></span>
+
+      <div class="edit-outfield">
+        <div class="edit-lf">
+          <div class="edit-field-position" id="left_field">
+            <h6 class='edit-position-name'>Left Field</h6>
+            <%= render 'edit_list', chart: @chart.position_list, position: "left_field" %>
+          </div>
+        </div>
+
+        <div class="edit-cf">
+          <div class="edit-field-position" id="center_field">
+            <h6 class='edit-position-name'>Center Field</h6>
+            <%= render 'edit_list', chart: @chart.position_list, position: "center_field" %>
+          </div>
+        </div>
+
+        <div class="edit-rf">
+          <div class="edit-field-position" id="right_field">
+            <h6 class='edit-position-name'>Right Field</h6>
+            <%= render 'edit_list', chart: @chart.position_list, position: "right_field" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="edit-mid-inf">
+        <div class="edit-ss">
+          <div class="edit-field-position" id="shortstop">
+            <h6 class='edit-position-name'>Shortstop</h6>
+            <%= render 'edit_list', chart: @chart.position_list, position: "shortstop" %>
+          </div>
+        </div>
+
+        <div class="edit-2b">
+          <div class="edit-field-position" id="second_base">
+            <h6 class='edit-position-name'>Second Base</h6>
+            <%= render 'edit_list', chart: @chart.position_list, position: "second_base" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="edit-inf">
+        <div class="edit-3b">
+          <div class="edit-field-position" id="third_base">
+            <h6 class='edit-position-name'>Third Base</h6>
+            <%= render 'edit_list', chart: @chart.position_list, position: "third_base" %>
+          </div>
+        </div>
+
+        <div class="edit-rotation">
+          <div class="edit-field-position" id="rotation">
+            <h6 class='edit-position-name'>Rotation</h6>
+            <%= render 'edit_list', chart: @chart.position_list, position: "rotation" %>
+          </div>
+        </div>
+
+        <div class="edit-1b">
+          <div class="edit-field-position" id="first_base">
+            <h6 class='edit-position-name'>First Base</h6>
+            <%= render 'edit_list', chart: @chart.position_list, position: "first_base" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="edit-bp-c-dh">
+        <div class="edit-bp">
+          <div class="edit-field-position" id="bullpen">
+            <h6 class='edit-position-name'>Bullpen</h6>
+            <%= render 'edit_list', chart: @chart.position_list, position: "bullpen" %>
+          </div>
+        </div>
+
+        <div class="edit-c">
+          <div class="edit-field-position" id="catcher">
+            <h6 class='edit-position-name'>Catcher</h6>
+            <%= render 'edit_list', chart: @chart.position_list, position: "catcher" %>
+          </div>
+        </div>
+
+        <div class="edit-dh">
+          <div class="edit-field-position" id="designated_hitter">
+            <h6 class='edit-position-name'>Designated Hitter</h6>
+            <%= render 'edit_list', chart: @chart.position_list, position: "designated_hitter" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="roster">
+    <h3 class="roster-header">Roster</h3>
+    <% @roster.each do |player| %>
+      <div class='depth-player draggable' data-player-id=<%= player.id %>>
+        <span class="<%= style_player(player) %>"><%= player.last_name %>, <%= player.first_name %> (<%= abbrev_position(player) %>)</span>
+        <span class="delete-player hide">x</span>
+      </div>
+    <% end %>
+  </div>
+</div>

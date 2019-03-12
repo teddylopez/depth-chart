@@ -1,0 +1,10 @@
+<div class="sortable">
+  <% if chart[position].to_a.any? %>
+    <% chart[position].each do |player_id| %>
+      <div class='depth-player removeable' data-player-id=<%= player_id %>>
+        <span class="<%= style_player(@players[player_id.to_i]) %>"><%= @players[player_id.to_i].last_name%>, <%= @players[player_id.to_i].first_name %></span>
+        <span class='delete-player'>x</span>
+      </div>
+    <% end %>
+  <% end %>
+</div>

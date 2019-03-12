@@ -1,0 +1,28 @@
+<div class="player-modal">
+  <div class="player-modal-content" style="background-color:<%= baseball_cardify %>">
+    <div class="player">
+      <h4 class="player-name"><%= @player.first_name %> <%= @player.last_name %></h4 >
+
+        <div class="info-wrapper">
+          <div class="player-photo">
+            <%= image_tag(@player.photo, width: 180) %>
+          </div>
+
+          <ul class="player-info">
+            <li>Position: <%= player_position(@player) %></li>
+            <li>Bats: <%= player_bats(@player) %></li>
+            <li>Throws: <%= player_throws(@player) %></li>
+            <li>Age: <%= @player.age %></li>
+
+            <% if @player.current_year_salary.present? %>
+              <li>Current Year Salary:  <%= @player.current_year_salary %></li>
+            <% end %>
+            <% if @player.free_agent_year.present? %>
+              <li>Free Agent Year: <%= @player.free_agent_year %></li>
+            <% end %>
+          </ul>
+        </div>
+
+    </div>
+  </div>
+</div>
